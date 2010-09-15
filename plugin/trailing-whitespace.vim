@@ -7,5 +7,5 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 
 " Run :FixWhitespace to remove end of line white space.
-command! -range=% FixWhitespace silent! keepjumps <line1>,<line2>substitute/\s\+$//
+command! -range=% FixWhitespace silent! let savesearch = @/ | keepjumps <line1>,<line2>substitute/\s\+$// | let @/ = savesearch | unlet savesearch
 
