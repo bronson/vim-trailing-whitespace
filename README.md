@@ -8,11 +8,11 @@ modes as well (see options below).
 ##Installation
 There are a few ways you can go about installing this plugin:
 1.  If you have [Vundle](https://github.com/gmarik/Vundle.vim) you can simply add:
-    `Bundle 'ntpeters/vim-better-whitespace'`
+    `Bundle 'bronson/vim-trailing-whitespace'`
     to your `.vimrc` file then run:
     `:BundleInstall`
 2.  If you are using [Pathogen](https://github.com/tpope/vim-pathogen), you can just run the following command:
-    `git clone git://github.com/ntpeters/vim-better-whitespace.git ~/.vim/bundle/`
+    `git clone git://github.com/bronson/vim-trailing-whitespace.git ~/.vim/bundle/`
 3.  This plugin can also be installed by copying its contents into your `~/.vim/` directory.
 
 ##Usage
@@ -51,7 +51,6 @@ file that gets fixed.
 To enable/disable stripping of extra whitespace on file save, call:
 `:ToggleFixWhitespaceOnSave`
 
-The main repository is at http://github.com/ntpeters/vim-better-whitespace
+The main repository is at http://github.com/bronson/vim-trailing-whitespace
 
-Forked from: http://github.com/bronson/vim-trailing-whitespace
 Originally based on http://vim.wikia.com/wiki/Highlight_unwanted_spaces
