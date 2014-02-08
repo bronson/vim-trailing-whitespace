@@ -7,6 +7,7 @@ modes as well (see options below).
 
 ##Installation
 There are a few ways you can go about installing this plugin:
+
 1.  If you have [Vundle](https://github.com/gmarik/Vundle.vim) you can simply add:
     ```
     Bundle 'bronson/vim-trailing-whitespace'
