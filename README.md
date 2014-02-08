@@ -20,7 +20,7 @@ There are a few ways you can go about installing this plugin:
     ```
     git clone git://github.com/bronson/vim-trailing-whitespace.git ~/.vim/bundle/
     ```
-3.  This plugin can also be installed by copying its contents into your `~/.vim/` directory.
+3.  While this plugin can also be installed by copying its contents into your `~/.vim/` directory, I would highly recommend using one of the above methods as they make managing your Vim plugins painless.
 
 ##Usage
 Whitespace highlighting is enabled by default, with a highlight color of red.
@@ -46,7 +46,7 @@ cause a slow down in Vim since it uses the CursorMoved event to detect and
 exclude the current line.
 
 The level `soft` will use syntax based highlighting, so there shouldn't be
-a performance hit like with the 'hard' option.  The drawback is that this
+a performance hit like with the `hard` option.  The drawback is that this
 highlighting will have a lower priority and may be overwritten by higher
 priority highlighting.
 
