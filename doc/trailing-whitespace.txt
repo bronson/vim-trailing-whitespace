@@ -14,3 +14,13 @@ The repo is at http://github.com/bronson/vim-trailing-whitespace
 
 Originally based on http://vim.wikia.com/wiki/Highlight_unwanted_spaces
 
+------------------------------------------------------------------------------
+VARIABLES                                   *FixWhitespace-variables*
+
+                                       g:extra_whitespace_ignored_filetypes
+g:extra_whitespace_ignored_filetypes
+    You can set filetypes to be ignored for highlight into this variable.
+
+  let g:extra_whitespace_ignored_filetypes = ['unite', 'mkd']
+
+		The default value is [].
