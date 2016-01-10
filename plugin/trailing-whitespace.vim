@@ -5,7 +5,7 @@ if !exists('g:extra_whitespace_ignored_filetypes')
     let g:extra_whitespace_ignored_filetypes = []
 endif
 
-function! ShouldMatchWhitespace()
+function! s:ShouldMatchWhitespace()
     for ft in g:extra_whitespace_ignored_filetypes
         if ft ==# &filetype | return 0 | endif
     endfor
@@ -15,11 +15,11 @@ endfunction
 " Highlight EOL whitespace, http://vim.wikia.com/wiki/Highlight_unwanted_spaces
 highlight default ExtraWhitespace ctermbg=darkred guibg=#382424
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd BufRead,BufNew * if ShouldMatchWhitespace() | match ExtraWhitespace /\s\+$/ | else | match ExtraWhitespace /^^/ | endif
+autocmd BufRead,BufNew * if s:ShouldMatchWhitespace() | match ExtraWhitespace /\s\+$/ | else | match ExtraWhitespace /^^/ | endif
 
 " The above flashes annoyingly while typing, be calmer in insert mode
-autocmd InsertLeave * if ShouldMatchWhitespace() | match ExtraWhitespace /\s\+$/ | endif
-autocmd InsertEnter * if ShouldMatchWhitespace() | match ExtraWhitespace /\s\+\%#\@<!$/ | endif
+autocmd InsertLeave * if s:ShouldMatchWhitespace() | match ExtraWhitespace /\s\+$/ | endif
+autocmd InsertEnter * if s:ShouldMatchWhitespace() | match ExtraWhitespace /\s\+\%#\@<!$/ | endif
 
 function! s:FixWhitespace(line1,line2)
     let l:save_cursor = getpos(".")
