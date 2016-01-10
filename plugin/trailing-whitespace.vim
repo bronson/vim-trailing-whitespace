@@ -14,7 +14,7 @@ endfunction
 
 " Highlight EOL whitespace, http://vim.wikia.com/wiki/Highlight_unwanted_spaces
 highlight default ExtraWhitespace ctermbg=darkred guibg=#382424
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd ColorScheme * highlight default ExtraWhitespace ctermbg=red guibg=red
 autocmd BufRead,BufNew * if s:ShouldMatchWhitespace() | match ExtraWhitespace /\s\+$/ | else | match ExtraWhitespace /^^/ | endif
 
 " The above flashes annoyingly while typing, be calmer in insert mode
