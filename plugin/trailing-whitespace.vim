@@ -13,8 +13,8 @@ function! ShouldMatchWhitespace()
 endfunction
 
 " Highlight EOL whitespace, http://vim.wikia.com/wiki/Highlight_unwanted_spaces
-highlight default ExtraWhitespace ctermbg=darkred guibg=#382424
-autocmd ColorScheme * highlight default ExtraWhitespace ctermbg=red guibg=red
+highlight default ExtraWhitespace ctermbg=darkred guibg=darkred
+autocmd ColorScheme * highlight default ExtraWhitespace ctermbg=darkred guibg=darkred
 autocmd BufRead,BufNew * if ShouldMatchWhitespace() | match ExtraWhitespace /\\\@<![\u3000[:space:]]\+$/ | else | match ExtraWhitespace /^^/ | endif
 
 " The above flashes annoyingly while typing, be calmer in insert mode
