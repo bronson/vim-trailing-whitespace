@@ -8,8 +8,8 @@ The repo is at http://github.com/bronson/vim-trailing-whitespace
 
 Originally based on http://vim.wikia.com/wiki/Highlight_unwanted_spaces
 
-License: cc-by-sa.  (This may not be the best license for software but it
-covered the instructions this plugin is based on. Until a reason to force
-a different license appears, it's easiest to continue to use it.)
+License: cc-by-sa.  The instructions this plugin is based on were
+licensed cc-by-sa so, until a reason to force a different license appears,
+we'll continue to use it.
 
 A more complete alternative is at https://github.com/ntpeters/vim-better-whitespace
