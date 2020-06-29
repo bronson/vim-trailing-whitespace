@@ -22,9 +22,7 @@ autocmd InsertLeave * if ShouldMatchWhitespace() | match ExtraWhitespace /\\\@<!
 autocmd InsertEnter * if ShouldMatchWhitespace() | match ExtraWhitespace /\\\@<![\u3000[:space:]]\+\%#\@<!$/ | endif
 
 function! s:FixWhitespace(line1,line2)
-    let l:save_cursor = getpos(".")
-    silent! execute ':' . a:line1 . ',' . a:line2 . 's/\\\@<!\s\+$//'
-    call setpos('.', l:save_cursor)
+    silent! keepjumps execute ':' . a:line1 . ',' . a:line2 . 's/\\\@<!\s\+$//'
 endfunction
 
 " Run :FixWhitespace to remove end of line white space
