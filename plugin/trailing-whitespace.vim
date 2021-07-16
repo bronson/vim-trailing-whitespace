@@ -6,6 +6,7 @@ if !exists('g:extra_whitespace_ignored_filetypes')
 endif
 
 function! ShouldMatchWhitespace()
+    if &buftype !=# '' && &buftype !=# 'acwrite' | return 0 | endif
     for ft in g:extra_whitespace_ignored_filetypes
         if ft ==# &filetype | return 0 | endif
     endfor
