@@ -16,8 +16,8 @@ endfunction
 " Highlight EOL whitespace, http://vim.wikia.com/wiki/Highlight_unwanted_spaces
 highlight default ExtraWhitespace ctermbg=darkred guibg=darkred
 autocmd ColorScheme * highlight default ExtraWhitespace ctermbg=darkred guibg=darkred
-let term_open_event = (has('nvim') ? 'TermOpen' : 'TerminalOpen')
-exe 'autocmd BufRead,BufNew,FileType,' term_open_event '* if ShouldMatchWhitespace() | match ExtraWhitespace /\\\@<![\u3000[:space:]]\+$/ | else | match ExtraWhitespace /^^/ | endif'
+exe 'autocmd ' . (has('nvim') ? 'TermOpen' : 'TerminalOpen') . ' * match ExtraWhitespace /^^/'
+exe 'autocmd BufRead,BufNew,FileType * if ShouldMatchWhitespace() | match ExtraWhitespace /\\\@<![\u3000[:space:]]\+$/ | else | match ExtraWhitespace /^^/ | endif'
 
 " The above flashes annoyingly while typing, be calmer in insert mode
 autocmd InsertLeave * if ShouldMatchWhitespace() | match ExtraWhitespace /\\\@<![\u3000[:space:]]\+$/ | endif
